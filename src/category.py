@@ -10,7 +10,11 @@ class Category:
         self.counter_products += len(products)
         self.counter_category += 1
 
+    def __str__(self):
+        return f'{self.name}, количество продуктов {self.counter_products} шт.'
+
     def add_product(self, new_products):
+        """метод, добавления продукта в категорию"""
         self.__products.append(new_products)
         self.counter_products += 1
 

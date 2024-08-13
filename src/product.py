@@ -1,10 +1,20 @@
 class Product:
 
     def __init__(self, name, description, price, quantity):
+        """ инициализация объектов"""
         self.name = name
         self.description = description
         self.__price = price
         self.quantity = quantity
+
+    def __str__(self):
+        """метод, возвращающий строковое значение обьекта"""
+        return f'{self.name}, {self.__price} руб., Остаток: {self.quantity} шт.'
+
+    def __add__(self, other):
+        result = self.quantity * self.price
+        result_ = other.quantity * other.price
+        return result + result_
 
     @classmethod
     def new_product(cls, params_product: dict):
