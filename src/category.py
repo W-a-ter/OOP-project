@@ -1,3 +1,6 @@
+from src.product import Product
+
+
 class Category:
     counter_products = 0
     counter_category = 0
@@ -15,8 +18,11 @@ class Category:
 
     def add_product(self, new_products):
         """метод, добавления продукта в категорию"""
-        self.__products.append(new_products)
-        self.counter_products += 1
+        if isinstance(new_products, Product):
+            self.__products.append(new_products)
+            self.counter_products += 1
+        else:
+            raise TypeError
 
     @property
     def products(self):

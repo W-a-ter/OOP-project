@@ -9,7 +9,8 @@ class Product:
 
     def __str__(self):
         """метод, возвращающий строковое значение обьекта"""
-        return f'{self.name}, {self.__price} руб., Остаток: {self.quantity} шт.'
+        return (f'{self.name}, '
+                f'{self.__price} руб., Остаток: {self.quantity} шт.')
 
     def __add__(self, other):
         result = self.quantity * self.price
