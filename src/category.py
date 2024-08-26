@@ -14,7 +14,9 @@ class Category:
         self.counter_category += 1
 
     def __str__(self):
-        return f'{self.name}, количество продуктов {self.counter_products} шт.'
+        return (f'{self.name}, количество продуктов: '
+                f'{sum([product.quantity for product in self.__products])}'
+                f' шт.')
 
     def add_product(self, new_products):
         """метод, добавления продукта в категорию"""

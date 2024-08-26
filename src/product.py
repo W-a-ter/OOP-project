@@ -1,10 +1,19 @@
-class Product:
+from src.print_mixin import PrintMixin
+
+
+class Product(PrintMixin):
 
     def __init__(self, name, description, price, quantity):
         """ инициализация объектов"""
         self.name = name
         self.description = description
         self.__price = price
+
+        super().__init__()
+        if quantity == 0:
+            raise ValueError('Товар с '
+                             'нулевым количеством не '
+                             'может быть добавлен')
         self.quantity = quantity
 
     def __str__(self):
