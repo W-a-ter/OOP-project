@@ -8,14 +8,13 @@ class Product(PrintMixin):
         self.name = name
         self.description = description
         self.__price = price
+        self.quantity = quantity
 
         super().__init__()
         if quantity == 0:
             raise ValueError('Товар с '
                              'нулевым количеством не '
                              'может быть добавлен')
-        self.quantity = quantity
-
     def __str__(self):
         """метод, возвращающий строковое значение обьекта"""
         return (f'{self.name}, '

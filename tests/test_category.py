@@ -19,4 +19,8 @@ def test_test_category_product_setter(category1, product1):
 
 
 def test_category_str(category1):
-    assert str(category1) == 'Смартфоны, количество продуктов 2 шт.'
+    assert str(category1) == 'Смартфоны, количество продуктов: 13 шт.'
+
+
+def test_result(category1):
+    assert category1.result() == 30000.0
